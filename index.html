@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CORS</title>
+</head>
+<body>
+    <h1>Testing CORS with Express API</h1>
+    <script>
+        fetch('http://localhost:5000/api/users') // Make a GET request to your Express API
+            .then(response => response.json())
+            .then(data => {
+                console.log('Response:', data); // If successful, print the JSON data
+                alert('Check the console for the response!');
+            })
+            .catch(error => {
+                console.error('Error:', error); // In case of an error, it will print here
+                alert('CORS Error! Check the console.');
+            });
+    </script>
+</body>
+</html>
